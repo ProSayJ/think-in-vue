@@ -11,6 +11,10 @@ new Vue({
         y: 0,
         userName: "",
         userName2: "",
+        a: 0,
+        b: 0,
+        changeColor: false,
+        changeLength: false
     },
     methods: {
         helloWorld: function (time) {
@@ -49,8 +53,31 @@ new Vue({
         },
         userNameBind: function () {
             this.userName = this.$refs.userName.value;
+        },
+        addToA: function () {
+            console.log("addToA 执行");
+            return this.a + this.age;
+        },
+        addToB: function () {
+            console.log("addToB 执行");
+            return this.b + this.age;
         }
-
+    },
+    computed: {
+        addToA_C: function () {
+            console.log("Computed addToA 执行");
+            return this.a + this.age;
+        },
+        addToB_C: function () {
+            console.log("Computed addToB 执行");
+            return this.b + this.age;
+        },
+        compClasses: function () {
+            return {
+                changeColor: this.changeColor,
+                changeLength: this.changeLength
+            }
+        }
     }
 });
 /**

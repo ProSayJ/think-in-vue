@@ -1,6 +1,23 @@
-#canvas{
+#canvas {
     width: 600px;
     padding: 80px 20px;
     text-align: center;
     border: 1px solid #333;
+}
+
+span {
+    background: green;
+    display: inline-block;
+    padding: 10px;
+    color: #fff;
+    margin: 10px 0;
+}
+
+.changeColor span {
+    background: red;
+}
+
+.changeLength span:after {
+    content: "length";
+    margin-left: 10px;
 }

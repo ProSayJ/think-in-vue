@@ -50,14 +50,11 @@
 
     <div id="canvas" @mousemove="updateXY">
         {{x}},{{y}}
-
         <p v-on:mousemove="stopMoving">使用v-on:监听鼠标事件触发js方法：Stop Moveing</p>
         <!--事件修饰符-->
         <p v-on:mousemove.stop>使用VUE事件修饰符(.stop)监听鼠标事件：Stop Moveing</p>
-
         <span>{{age}}</span>
         <button v-on:click.once="age++">使用VUE事件修饰符(.once)涨一岁,只能点击一次</button>
-
         <p>
             <a v-on:click="alert()" target="_blank" href="http://www.baidu.com">百度</a>
         </p>
@@ -71,10 +68,8 @@
     <h1>键盘事件/键值修饰符</h1>
     <label>键盘事件-keyup：</label>
     <input type="text" @keyup="alertMsg"><br>
-
     <label>键盘组合事件-keyup.enter：</label>
     <input type="text" v-on:keyup.enter="alertMsg"><br>
-
     <label>键盘组合事件-keyup.alt.enter：</label>
     <input type="text" v-on:keyup.alt.enter="alertMsg()"><br>
     <span>{{name}}</span>
@@ -86,12 +81,40 @@
         <label>姓名(双向数据绑定,使用js事件和ref)：</label>
         <input type="text" v-on:keyup="userNameBind()" ref="userName"><span>{{userName}}</span>
     </p>
-
     <p>
         <label>姓名(双向数据绑定,使用v-model)：</label>
         <input type="text" v-model="userName2"><span>{{userName2}}</span>
     </p>
     <hr>
+
+    <h1>计算属性 Computed</h1>
+    <p>注：只要触发Add to A 或者 Add to B中的任何一个button，addToA方法和addToB方法都会执行,这样很耗费性能。耗时和搜索的业务场景建议使用该属性</p>
+    <button v-on:click="a++">Add to A</button>
+    <button v-on:click="b++">Add to B</button>
+    <p>A : {{a}}</p>
+    <p>B : {{b}}</p>
+    <p> 普通调用js方法 addToA()。全局所有的方法都会执行 Age + A = {{addToA()}}</p>
+    <p> 普通调用js方法 addToB()。全局所有的方法都会执行Age + B = {{addToB()}}</p>
+    <p> 计算属性调用 addToA_C。只会查找computed中的方法 Age + A = {{addToA_C}}</p>
+    <p> 计算属性调用 addToB_C。只会查找computed中的方法 Age + B = {{addToB_C}}</p>
+    <hr>
+
+
+    <h1>动态绑定css class样式</h1>
+    <div v-on:click="changeColor = !changeColor"
+         v-bind:class="{changeColor:changeColor}">
+        示例 1: <span>Henry</span>
+    </div>
+    <div v-bind:class="compClasses">
+        示例 2:
+        <button v-on:click="changeColor = !changeColor">change color</button>
+        <button v-on:click="changeLength = !changeLength">change length</button>
+        <span>Henry</span>
+    </div>
+    <hr>
+
+
+    v-if:https://www.bilibili.com/video/BV1qb41187fZ?p=12 TODO
 
 </div>
 <script type="text/javascript" src="app.js"></script>
