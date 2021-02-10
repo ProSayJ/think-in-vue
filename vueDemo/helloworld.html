@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello-world</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="vue.js" type="text/javascript" charset="utf-8"></script>
+    <!--    <script src="https://unpkg.com/vue@2.6.12/dist/vue.js"></script>-->
+</head>
+<body>
+<h1>根容器之外的数据</h1><span>{{ name }}</span>
+
+<!--vue-app是根容器-->
+<div id="vue-app">
+    <hr>
+    <h1>helloWorld</h1>
+    <p>{{ helloWorld('早上') }}</p>
+    <span>姓名是：{{ name }}</span>,
+    <span>工作是：{{job}}</span>
+    <hr>
+
+    <h1>数据绑定-属性绑定</h1>
+    <p><span>使用v-bind：绑定属性：</span><input type="text" v-bind:value="job"></p>
+    <p><span>使用v-bind：绑定属性：</span><a v-bind:href="website" target="_blank">百度</a></p>
+    <!--标签显示在dom文档中-->
+    <p>{{ wabsiteTag}}</p>
+    <span>使用v-html：在Dom标签中显示html</span> <span v-html="wabsiteTag"></span>
+    <hr>
+
+
+    <h1>数据绑定-监听事件</h1>
+    <p>My age is {{age}}</p>
+    <p>使用v-on:监听按钮事件(不使用js方法)：
+        <button v-on:click="age++">涨一岁</button>
+    </p>
+    <!--v-on:简写成 @-->
+    <p>使用@监听按钮事件(不使用js方法)：
+        <button @click="age--">减一岁</button>
+    </p>
+    <p>使用v-on:监听按钮事件：
+        <button v-on:click="add(1)">涨一岁</button>
+        <button v-on:click="add(10)">涨十岁</button>
+        <button v-on:dblclick="add()">双击涨一岁</button>
+        <button v-on:click="subtract(1)">减一岁</button>
+        <button v-on:click="subtract(10)">减十岁</button>
+        <button v-on:dblclick="subtract()">双击减一岁</button>
+    </p>
+    <hr>
+
+
+    <div id="canvas" @mousemove="updateXY">
+        {{x}},{{y}}
+
+        <p v-on:mousemove="stopMoving">使用v-on:监听鼠标事件触发js方法：Stop Moveing</p>
+        <!--事件修饰符-->
+        <p v-on:mousemove.stop>使用VUE事件修饰符(.stop)监听鼠标事件：Stop Moveing</p>
+
+        <span>{{age}}</span>
+        <button v-on:click.once="age++">使用VUE事件修饰符(.once)涨一岁,只能点击一次</button>
+
+        <p>
+            <a v-on:click="alert()" target="_blank" href="http://www.baidu.com">百度</a>
+        </p>
+        <p>使用VUE事件修饰符(.prevent)阻止事件：
+            <a v-on:click.prevent="alert()" target="_blank" href="http://www.baidu.com">百度一下，阻止默认事件</a>
+        </p>
+    </div>
+    <hr>
+
+
+    <h1>键盘事件/键值修饰符</h1>
+    <label>键盘事件-keyup：</label>
+    <input type="text" @keyup="alertMsg"><br>
+
+    <label>键盘组合事件-keyup.enter：</label>
+    <input type="text" v-on:keyup.enter="alertMsg"><br>
+
+    <label>键盘组合事件-keyup.alt.enter：</label>
+    <input type="text" v-on:keyup.alt.enter="alertMsg()"><br>
+    <span>{{name}}</span>
+    <hr>
+
+
+    <h1>双向数据绑定 / input /select /textarea </h1>
+    <p>
+        <label>姓名(双向数据绑定,使用js事件和ref)：</label>
+        <input type="text" v-on:keyup="userNameBind()" ref="userName"><span>{{userName}}</span>
+    </p>
+
+    <p>
+        <label>姓名(双向数据绑定,使用v-model)：</label>
+        <input type="text" v-model="userName2"><span>{{userName2}}</span>
+    </p>
+    <hr>
+
+</div>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
