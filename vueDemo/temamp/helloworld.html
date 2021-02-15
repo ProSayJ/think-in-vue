@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>hello-world</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="vue.js" type="text/javascript" charset="utf-8"></script>
-    <!--    <script src="https://unpkg.com/vue@2.6.12/dist/vue.js"></script>-->
+    <title>xx-xxx</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../JavaScriptFramework/vue.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
 <h1>根容器之外的数据</h1><span>{{ name }}</span>
@@ -101,15 +100,26 @@
 
 
     <h1>动态绑定css class样式</h1>
+
+    <div v-bind:class="{red:true,blue:true}">
+        示例 1:
+        vue中的绑定 <span>Henry-Basic</span>111
+    </div>
+
+
     <div v-on:click="changeColor = !changeColor"
          v-bind:class="{changeColor:changeColor}">
-        示例 1: <span>Henry</span>
-    </div>
-    <div v-bind:class="compClasses">
         示例 2:
+        <span class="dynamicClassInit">Henry</span>
+    </div>
+
+
+    <div v-bind:class="compClasses">
+        示例 3:
         <button v-on:click="changeColor = !changeColor">change color</button>
         <button v-on:click="changeLength = !changeLength">change length</button>
-        <span>Henry</span>
+        <span class="dynamicClassInit">Henry</span>
+        <span class="dynamicClassInit">Henry</span>
     </div>
     <hr>
 

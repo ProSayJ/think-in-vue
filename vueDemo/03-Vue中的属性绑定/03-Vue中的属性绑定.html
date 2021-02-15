@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03-Vue中的属性绑定</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../JavaScriptFramework/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+<!--vue-app是根容器-->
+<div id="vue-app">
+    <h1>Vue中的属性绑定</h1>
+
+    <!--标签显示在dom文档中-->
+    <p>显示在dom文档中：{{website}}</p>
+    <p>
+        <span>使用[v-bind:]绑定数据在标签属性上。[v-bind:简写:]</span>
+    </p>
+
+    <p>
+        <a v-bind:href="website" target="_blank">百度</a>
+        <a :href="website" target="_blank">百度</a><br>
+
+        <input type="text" v-bind:value="name">
+        <input type="text" :value="name"><br>
+    </p>
+
+    <p>
+        绑定标签属性到span标签：<span v-html="wabsiteTag"></span>
+    </p>
+
+</div>
+<script type="text/javascript" src="03-App.js"></script>
+</body>
+</html>

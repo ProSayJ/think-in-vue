@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02-Vue中的数据和方法</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../JavaScriptFramework/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<h1>Vue中的数据和方法</h1>
+
+<p>根容器之外的数据:<span>{{ name }}</span></p>
+
+<!--vue-app是根容器-->
+<div id="vue-app">
+    <span>姓名是：{{ name }}</span>，<span>工作是：{{job}}</span>
+
+    <!--方法和方法传值-->
+    <p>{{ helloWorld('早上') }}</p>
+    <p>{{ helloWorld('晚上') }}</p>
+
+</div>
+<script type="text/javascript" src="02-App.js"></script>
+</body>
+</html>

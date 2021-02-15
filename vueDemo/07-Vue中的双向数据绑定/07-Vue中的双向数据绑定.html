@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07-Vue中的双向数据绑定</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../JavaScriptFramework/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+<!--vue-app是根容器-->
+<div id="vue-app">
+    <h1>Vue中的双向数据绑定 / input /select /textarea </h1>
+
+    <label>姓名-keyup：</label>
+    <input ref="name" type="text" v-on:keyup="nameBind()"><span>{{name}}</span><br>
+
+    <label>年纪-keyup.enter：</label>
+    <input ref="age" type="text" @keyup.enter="ageBind"><span>{{age}}</span><br>
+
+    <label>学校：</label>
+    <input ref="school" type="text" v-model="school"><span>{{school}}</span><br>
+
+</div>
+<script type="text/javascript" src="07-App.js"></script>
+</body>
+</html>

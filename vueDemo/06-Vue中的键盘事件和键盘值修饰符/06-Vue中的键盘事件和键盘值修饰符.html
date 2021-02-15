@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06-Vue中的键盘事件和键盘值修饰符</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../JavaScriptFramework/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+<!--vue-app是根容器-->
+<div id="vue-app">
+    <h1>Vue中的键盘事件和键盘值修饰符</h1>
+
+    <label>姓名-keyup：</label>
+    <input type="text" @keyup="alertMsg"><br>
+
+    <label>姓名-keyup.enter：</label>
+    <input type="text" @keyup.enter="alertMsg"><br>
+
+    <label>姓名-keyup.alt.enter：</label>
+    <input type="text" @keyup.alt.enter="alertMsg()"><br>
+
+    <span>{{name}}</span>
+</div>
+<script type="text/javascript" src="06-App.js"></script>
+</body>
+</html>

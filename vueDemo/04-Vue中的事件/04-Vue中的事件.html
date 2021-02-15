@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04-Vue中的事件Events</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../JavaScriptFramework/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+<!--vue-app是根容器-->
+<div id="vue-app">
+    <h1>Vue中的事件Events</h1>
+    <h2>My age is {{age}}</h2>
+    <p>使用[v-on:][v-on: 简写为 @]监听按钮事件(不使用js方法)：<br>
+        <button v-on:click="age++">涨一岁</button>
+        <button @click="age++">涨一岁</button>
+        <button v-on:click="age--">减一岁</button>
+        <button @click="age--">减一岁</button>
+    </p>
+    <p>使用v-on:监听按钮事件：<br>
+        <button @click="add(1)">涨一岁</button>
+        <button @click="add(10)">涨十岁</button>
+        <button @dblclick="add(1)">双击涨一岁</button>
+        <button @click="subtract(1)">减一岁</button>
+        <button @click="subtract(10)">减十岁</button>
+        <button @dblclick="subtract(1)">双击减一岁</button>
+    </p>
+
+    <div id="canvas" v-on:mousemove="updateXY">
+        {{x}},{{y}}
+    </div>
+</div>
+<script type="text/javascript" src="04-App.js"></script>
+</body>
+</html>
