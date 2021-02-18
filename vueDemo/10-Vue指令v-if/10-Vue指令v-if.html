@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10-Vue指令v-if v-show</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../JavaScriptFramework/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+<!--vue-app是根容器-->
+<div id="vue-app">
+    <h1>Vue指令v-if v-show</h1>
+    <button @click="error = !error">Toggle Error</button>
+    <button v-on:click="success = !success">Toggle Success</button>
+
+    <p v-if="error">[v-if] 网络资源错误:404</p>
+    <p v-else-if="success">网络连接成功:200</p>
+
+    <p v-show="error">[v-show] 网络资源错误:404</p>
+
+</div>
+<script type="text/javascript" src="10-App.js"></script>
+</body>
+</html>

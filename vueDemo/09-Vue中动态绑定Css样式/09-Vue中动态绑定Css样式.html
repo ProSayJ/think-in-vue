@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09-Vue中动态绑定Css样式</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../JavaScriptFramework/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+<!--vue-app是根容器-->
+<div id="vue-app">
+    <h1>Vue中动态绑定Css样式</h1>
+    <div :class="{red:true,blue:true}">
+        示例 1:
+        vue中的绑定 <span>Henry-Basic</span>
+    </div>
+
+
+    <div @click="changeColor = !changeColor"
+         :class="{changeColor:changeColor}">
+        示例 2:
+        <span class="dynamicClassInit">Henry</span>
+    </div>
+
+
+    <div :class="compClasses">
+        示例 3:
+        <button @click="changeColor = !changeColor">change color</button>
+        <button @click="changeLength = !changeLength">change length</button>
+        <span class="dynamicClassInit">Henry</span>
+        <span class="dynamicClassInit">Henry</span>
+    </div>
+</div>
+<script type="text/javascript" src="09-App.js"></script>
+</body>
+</html>

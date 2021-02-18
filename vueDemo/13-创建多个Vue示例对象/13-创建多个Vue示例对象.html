@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13-创建多个Vue示例对象</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../JavaScriptFramework/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<h2>创建多个Vue示例对象</h2>
+
+<!--vue-app是根容器-->
+<div id="vue-app-one">
+    <h2>{{title}}</h2>
+    <p>{{greet}}</p>
+</div>
+
+
+<div id="vue-app-two">
+    <h2>{{title}}</h2>
+    <p>{{greet}}</p>
+    <button v-on:click="changeTitle">改变app1容器的title</button>
+</div>
+
+<script type="text/javascript" src="13-App.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>08-Vue中的计算属性-Computed</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../JavaScriptFramework/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+<!--vue-app是根容器-->
+<div id="vue-app">
+    <h1>Vue中的计算属性-Computed</h1>
+    <p>A : {{a}}</p>
+    <p>B : {{b}}</p>
+
+    <p>注：只要触发Add to A 或者 Add to B中的任何一个button，addToA方法和addToB方法都会执行,这样很耗费性能。耗时和搜索的业务场景建议使用该属性</p>
+    <button @click="a++">Add to A</button>
+    <button @click="b++">Add to B</button>
+
+    <p> 普通调用js方法 addToA()。全局所有的方法都会执行 Age + A = {{addToA()}}</p>
+    <p> 普通调用js方法 addToB()。全局所有的方法都会执行Age + B = {{addToB()}}</p>
+    <p> 计算属性调用 addToA_C。只会查找computed中的方法 Age + A = {{addToA_C}}</p>
+    <p> 计算属性调用 addToB_C。只会查找computed中的方法 Age + B = {{addToB_C}}</p>
+</div>
+<script type="text/javascript" src="08-App.js"></script>
+</body>
+</html>

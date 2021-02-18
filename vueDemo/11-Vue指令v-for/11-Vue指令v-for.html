@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11-Vue指令v-for</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../JavaScriptFramework/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+<!--vue-app是根容器-->
+<div id="vue-app">
+    <h1>Vue指令v-for</h1>
+    {{characters[0]}}
+    {{characters[1]}}
+    {{characters[2]}}
+    <hr>
+
+    <ul>
+        <li v-for="character in characters">{{character}}</li>
+    </ul>
+    <hr>
+
+    <ul>
+        <li v-for="(user,index) in users">{{index+1}}.{{user.name}}-{{user.age}}</li>
+    </ul>
+    <hr>
+
+    <div v-for="(user,index) in users">
+        <h3>{{index}} . {{user.name}}</h3>
+        <p>{{user.age}}</p>
+    </div>
+    <hr>
+
+
+    <template v-for="(user,index) in users">
+        <h3>{{index}} . {{user.name}}</h3>
+        <p>{{user.age}}</p>
+    </template>
+    <hr>
+
+    <template v-for="(user,index) in users">
+        <div v-for="(val,key) in user">
+            <span>{{val}}-{{key}}</span>
+        </div>
+    </template>
+
+</div>
+
+</div>
+<script type="text/javascript" src="11-App.js"></script>
+</body>
+</html>
